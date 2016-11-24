@@ -1,10 +1,5 @@
-package main;
+package com.github.shitenshi.sample.main;
 import java.awt.*;
-import java.awt.event.*;
-import Start.*;
-import Game.*;
-import Clear.*;
-import Over.*;
 import javax.swing.*;
 
 /**
@@ -19,6 +14,9 @@ public class MainPanel extends JPanel {
         // パネルの推奨サイズを設定、pack()するときに必要
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
         // 変数などの初期化
+
+        //表示テスト
+        setBackground(Color.blue);
     }
 
     public void paintComponent(Graphics g) {
