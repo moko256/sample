@@ -13,14 +13,15 @@ public class MainPanel extends JPanel {
     private static final int WIDTH = 640;
     private static final int HEIGHT = 360;
 
-    public MainPanel() {
+    private MainPanel(){}//隠蔽
+
+    public MainPanel(String me) {
         // パネルの推奨サイズを設定、pack()するときに必要
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
         // 変数などの初期化
 
         //表示テスト
-        setBackground(Color.gray);
-        JLabel text = new JLabel("Hello,World!");
+        JLabel text = new JLabel(me+" selected.");
         add(text);
         JPopupMenu menu = new JPopupMenu();
         menu.add("Apple");

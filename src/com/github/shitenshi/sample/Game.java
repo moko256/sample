@@ -1,6 +1,8 @@
 package com.github.shitenshi.sample;
 
 import com.github.shitenshi.sample.main.MainPanel;
+import com.github.shitenshi.sample.start.StartPanel;
+
 import javax.swing.*;
 
 /**
@@ -13,13 +15,22 @@ public class Game {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                MainPanel mainPanel=new MainPanel();
 
-                JFrame frame=new JFrame("MSC Game No.1");
-                frame.getContentPane().add(mainPanel);
+                final JFrame frame=new JFrame("MSC Game No.1");
+                final StartPanel startPanel=new StartPanel();
+                startPanel.setOnCharacterSelected(new StartPanel.OnCharacterSelected() {
+                    @Override
+                    public void onCharacterSelected(String me) {
+                        frame.getContentPane().remove(startPanel);
+                        frame.getContentPane().add(new MainPanel(me));
+                        frame.validate();
+                    }
+                });
+                frame.getContentPane().add(startPanel);
                 frame.pack();
                 frame.setVisible(true);
                 frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
             }
         });
     }
