@@ -1,9 +1,6 @@
 package com.github.shitenshi.sample;
 
 import com.github.shitenshi.sample.main.MainPanel;
-import javafx.application.Application;
-import javafx.stage.Stage;
-
 import javax.swing.*;
 
 /**
@@ -13,11 +10,16 @@ import javax.swing.*;
 public class Game {
 
     public static void main(String[] args){
-        MainPanel mainPanel=new MainPanel();
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                MainPanel mainPanel=new MainPanel();
 
-        JFrame frame=new JFrame("MSC Game No.1");
-        frame.getContentPane().add(mainPanel);
-        frame.pack();
-        frame.setVisible(true);
+                JFrame frame=new JFrame("MSC Game No.1");
+                frame.getContentPane().add(mainPanel);
+                frame.pack();
+                frame.setVisible(true);
+            }
+        });
     }
 }

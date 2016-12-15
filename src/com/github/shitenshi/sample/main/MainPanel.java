@@ -1,4 +1,5 @@
 package com.github.shitenshi.sample.main;
+
 import java.awt.*;
 import javax.swing.*;
 
