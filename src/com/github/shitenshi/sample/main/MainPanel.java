@@ -10,8 +10,8 @@ import javax.swing.text.TextAction;
  */
 public class MainPanel extends JPanel {
     // パネルサイズ
-    private static final int WIDTH = 640;
-    private static final int HEIGHT = 360;
+    private static final int WIDTH = 800;
+    private static final int HEIGHT = 450;
 
     private MainPanel(){}//隠蔽
 
